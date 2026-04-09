@@ -1,0 +1,8 @@
+{
+  "name": "interview-kit",
+  "version": "1.0.0",
+  "description": "High-performance interview prep agent with dynamic scaffolding and frontend pedagogical coaching.",
+  "author": {
+    "name": "Superpower Study Guide"
+  }
+}
