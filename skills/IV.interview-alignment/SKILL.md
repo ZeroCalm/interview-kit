@@ -1,9 +1,8 @@
 ---
-
-## name: IV.interview-alignment
-
+name: IV.interview-alignment
 description: Use when starting preparation for a new interview. Ingests JD and Resume to align on a structural interview strategy through Socratic questioning.
 triggers: ["/IV.interview-alignment"]
+---
 
 # Interview Alignment
 
