@@ -1,7 +1,7 @@
 ---
-name: interview-mocking
+name: IV.interview-mocking
 description: Execute mock interview questions from a prep-plan one at a time using Socratic dialogue to perfect STAR answers.
-triggers: ["/interview-mocking"]
+triggers: ["/IV.interview-mocking"]
 ---
 
 # Interview Mocking
@@ -38,4 +38,4 @@ Then, immediately move to the next incomplete `- [ ]` question.
 When all `[ ]` tasks in the plan have become `[x]`, or the user calls `/wrapup` to finish early:
 1. Stop the mock scenarios.
 2. Inform the user:
-> "The mock session is complete. I am now invoking the `@[/interview-mock-debrief]` skill to generate your rapid-study prep pack and Triage checklist."
+> "The mock session is complete. I am now invoking the `@[/IV.interview-mock-debrief]` skill to generate your rapid-study prep pack and Triage checklist."

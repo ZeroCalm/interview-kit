@@ -1,7 +1,7 @@
 ---
-name: interview-mock-debrief
-description: Use immediately after completing an interview-mocking session to generate a rapid-study preparation pack containing Golden STARs, Triage Checklists, and Reverse Interview questions.
-triggers: ["/interview-mock-debrief"]
+name: IV.interview-mock-debrief
+description: Use immediately after completing an IV.interview-mocking session to generate a rapid-study preparation pack containing Golden STARs, Triage Checklists, and Reverse Interview questions.
+triggers: ["/IV.interview-mock-debrief"]
 ---
 
 # Mock Debrief & Triage

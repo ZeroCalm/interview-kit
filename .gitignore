@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Node
+node_modules/
+
+# User Data / Interview records
+docs/interviews/
+
+.specstory

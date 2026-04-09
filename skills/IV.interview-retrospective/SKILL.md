@@ -1,13 +1,13 @@
 ---
-name: interview-retrospective
+name: IV.interview-retrospective
 description: Complete an interview workflow by compiling golden STAR answers and knowledge gaps into a final retrospective document.
-triggers: ["/interview-retrospective"]
+triggers: ["/IV.interview-retrospective"]
 ---
 
 # Interview Retrospective
 
 ## Motivation
-Use this skill as the final step of the Interview Kit workflow (after `interview-mocking` finishes or `/wrapup` is called) to consolidate the user's hard work into a reusable asset.
+Use this skill as the final step of the Interview Kit workflow (after `IV.interview-mocking` finishes or `/wrapup` is called) to consolidate the user's hard work into a reusable asset.
 
 ## 1. Persona Context & Transcript Ingestion
 Before writing the retrospective, you MUST explicitly ask the user TWO things (if not already provided):

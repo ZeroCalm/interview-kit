@@ -1,13 +1,13 @@
 ---
-name: interview-planning
-description: Use strictly after interview-alignment to convert a strategy document into an actionable mock questions execution plan.
-triggers: ["/interview-planning"]
+name: IV.interview-planning
+description: Use strictly after IV.interview-alignment to convert a strategy document into an actionable mock questions execution plan.
+triggers: ["/IV.interview-planning"]
 ---
 
 # Interview Planning
 
 ## Motivation
-Use this skill immediately after `interview-alignment` has produced a strategy document. This skill does NOT chat or roleplay. It is a pure factory for creating executable plans.
+Use this skill immediately after `IV.interview-alignment` has produced a strategy document. This skill does NOT chat or roleplay. It is a pure factory for creating executable plans.
 
 ## 1. Context Resolution & Read Strategy
 Scan the `docs/interviews/` directory. 
@@ -38,4 +38,4 @@ Example format:
 ## 4. Terminal State
 Once the plan is written, do NOT begin executing the questions. Handoff to the next phase:
 
-> "The mock interview plan has been generated and saved to `plans/`. We are ready to begin the execution phase. I am now invoking `@[/interview-mocking]`."
+> "The mock interview plan has been generated and saved to `plans/`. We are ready to begin the execution phase. I am now invoking `@[/IV.interview-mocking]`."

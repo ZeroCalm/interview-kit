@@ -1,6 +1,6 @@
 ---
-name: interview-mock-debrief
-description: 在结束 interview-mocking 沙盘推演后立即使用，用于生成包含黄金小抄、P0优先级盲点和反向提问库的考前突击包。
+name: IV.interview-mock-debrief
+description: 在结束 IV.interview-mocking 沙盘推演后立即使用，用于生成包含黄金小抄、P0优先级盲点和反向提问库的考前突击包。
 ---
 
 # 沙盘战损定责与突击包生成 (Mock Debrief)
