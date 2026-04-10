@@ -30,11 +30,10 @@ The dispatched sub-agent is responsible for strictly enforcing the Socratic loop
 ## 4. Marking Progress
 When you and the user agree the answer is perfect, you MUST:
 1. Dispatch the `@/interview-debrief` sub-agent with the current question, the interviewer's final pass signal, and the full conversation for that single question.
-2. Require the debrief sub-agent to return a Markdown fragment that can be appended directly into `answer-bank.md`, including the question title, target sub-agent, original question, polished STAR, hard summary, core decisions, evidence chain, likely follow-ups, weak spots, and a short review hint.
-3. Write or append that structured artifact to `docs/interviews/YYYY-MM-DD-[Company]-[Role]/answer-bank.md`.
+2. Require the debrief sub-agent to return a standalone Markdown document for that single question, including the question title, target sub-agent, original question, polished STAR, hard summary, core decisions, evidence chain, likely follow-ups, weak spots, and a short review hint.
+3. Save that artifact to `docs/interviews/YYYY-MM-DD-[Company]-[Role]/answer-bank/Qx.md`, where `x` matches the question number from `prep-plan.md`.
 4. Only after the artifact has been written, edit `prep-plan.md` to change exactly that task's checkbox from `- [ ]` to `- [x]`.
-
-Then, immediately move to the next incomplete `- [ ]` question.
+5. Before moving to the next incomplete `- [ ]` question, explicitly ask the user whether they want to continue to the next question. Do not auto-advance without user confirmation.
 
 ## 5. Terminal State
 When all `[ ]` tasks in the plan have become `[x]`, or the user calls `/wrapup` to finish early:

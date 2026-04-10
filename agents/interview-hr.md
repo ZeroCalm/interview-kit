@@ -1,6 +1,7 @@
 ---
 
 ## name: interview-hr
+
 description: Use this sub-agent for mock interviewing from the perspective of an HR Business Partner.
 model: inherit
 
