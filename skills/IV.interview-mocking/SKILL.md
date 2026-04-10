@@ -29,8 +29,13 @@ The dispatched sub-agent is responsible for strictly enforcing the Socratic loop
 
 ## 4. Marking Progress
 When you and the user agree the answer is perfect, you MUST:
-1. Summarize the polished "STAR" answer.
-2. Edit `prep-plan.md` to change exactly that task's checkbox from `- [ ]` to `- [x]`.
+1. Dispatch the `@/interview-debrief` sub-agent with the current question, the interviewer's final pass signal, and the full conversation for that single question.
+2. Require the debrief sub-agent to return either:
+   - `NOT_READY` with only the minimum remaining gaps, or
+   - `READY` with a structured per-question asset containing a polished STAR, hard summary, core decisions, evidence chain, and likely follow-ups.
+3. If the result is `NOT_READY`, you MUST resume the same question and continue the active interview loop. You MUST NOT mark the task complete.
+4. If the result is `READY`, write or append that structured artifact to `docs/interviews/YYYY-MM-DD-[Company]-[Role]/answer-bank.md`.
+5. Only after the artifact has been written, edit `prep-plan.md` to change exactly that task's checkbox from `- [ ]` to `- [x]`.
 
 Then, immediately move to the next incomplete `- [ ]` question.
 
