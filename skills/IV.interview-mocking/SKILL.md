@@ -14,7 +14,19 @@ Scan the `docs/interviews/` directory.
 - If there are multiple active `[Company]-[Role]` folders with uncompleted tasks, you MUST pause and ask the user: "You have multiple active prep sessions. Which interview role are we mocking today?".
 - Once a single context is confirmed, find the appropriate `docs/interviews/YYYY-MM-DD-[Company]-[Role]/prep-plan.md` document. Check which `- [ ]` tasks are incomplete. If none, terminate.
 
-## 2. Controller Dispatch & One Question At A Time (Hard-Gate)
+## 2. Dispatch Context Hydration
+Before dispatching any interviewer sub-agent, you MUST hydrate the active question with the interview context below:
+- Required: `prep-plan.md` for the active question, `strategy.md`, `resume-snapshot.md`, and `rules/pedagogical-coach.mdc`.
+- Optional: relevant `answer-bank/Qx.md` artifacts, but ONLY when the current question is strongly related to a previously polished answer and that prior artifact materially improves consistency or cross-question pressure testing.
+- Default behavior: do NOT import `answer-bank` artifacts when the current question can be mocked independently.
+
+You MUST summarize this context into a dispatch packet that makes the sub-agent aware of:
+- the candidate's positioning and strongest narratives,
+- the candidate's boundaries and defensive strategy,
+- the active question, target, and interviewer persona,
+- the pedagogical constraints that should govern the current round.
+
+## 3. Controller Dispatch & One Question At A Time (Hard-Gate)
 You act exclusively as the **Central Controller**, not the direct Socratic interviewer.
 You MUST select exactly **ONE** incomplete question from the mock list. 
 Identify the `[Agent: @/interview-xyz]` tag attached to that question.
@@ -24,18 +36,18 @@ Instead of answering as yourself, you MUST dispatch the designated sub-agent by 
 The sub-agent (`interview-peer`, `interview-manager`, etc.) contains the exact persona and strict grading rubric to execute the Socratic loop with the user.
 You step back and let the sub-agent iterate with the user. Do NOT present the next question until the active sub-agent considers the current answer absolutely perfect according to their rubric.
 
-## 3. Delegation of the "Anti-Echo Chamber" Rule
+## 4. Delegation of the "Anti-Echo Chamber" Rule
 The dispatched sub-agent is responsible for strictly enforcing the Socratic loop and preventing echo chambers. However, if the sub-agent fails and starts giving away answers, you as the Controller MUST intervene and correct the sub-agent's behavior.
 
-## 4. Marking Progress
+## 5. Marking Progress
 When you and the user agree the answer is perfect, you MUST:
 1. Dispatch the `@/interview-debrief` sub-agent with the current question, the interviewer's final pass signal, and the full conversation for that single question.
-2. Require the debrief sub-agent to return a standalone Markdown document for that single question, including the question title, target sub-agent, original question, polished STAR, hard summary, core decisions, evidence chain, likely follow-ups, weak spots, and a short review hint.
+2. Require the debrief sub-agent to return a standalone Markdown document for that single question, including the question title, target sub-agent, original question, interview final pass signal, polished answer, hard summary, core decisions, evidence chain, likely follow-ups, weak spots, risks, improvement suggestions, expression practice, and a short review hint.
 3. Save that artifact to `docs/interviews/YYYY-MM-DD-[Company]-[Role]/answer-bank/Qx.md`, where `x` matches the question number from `prep-plan.md`.
 4. Only after the artifact has been written, edit `prep-plan.md` to change exactly that task's checkbox from `- [ ]` to `- [x]`.
 5. Before moving to the next incomplete `- [ ]` question, explicitly ask the user whether they want to continue to the next question. Do not auto-advance without user confirmation.
 
-## 5. Terminal State
+## 6. Terminal State
 When all `[ ]` tasks in the plan have become `[x]`, or the user calls `/wrapup` to finish early:
 1. Stop the mock scenarios.
 2. Inform the user:
