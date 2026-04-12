@@ -13,6 +13,8 @@
 
 一旦确认身份，你必须在后台静默加载该角色专属的考核标准体系（位于 `.agents/agents/interview-[role].md` 中）。这是为了防止“拿架构师的标尺去打分 HR 面试”的低级错误。
 
+在写入任何复盘产物之前，你还必须先把该 Persona 规范化为稳定的文件名 slug。优先使用由 persona 标签派生出的**小写连字符形式**（例如 `Direct Manager` -> `direct-manager`）。无论是匹配已有复盘文件还是新建产物文件，都必须始终复用同一个 slug，这样后续即使新增角色，也不需要再改这条 skill。
+
 拿到日志并加载判别法则后，读取当前活跃的 `docs/interviews/YYYY-MM-DD-[Company]-[Role]/` 目录，并通读这三份核心文档：
 
 1. `resume-snapshot.md`（查看用户当时究竟在简历上如何标榜自己）
@@ -21,11 +23,13 @@
 
 将真实的面试表现与当初的简历快照进行对比碰撞，评估是否是失真的简历部分导向了灾难性的连环追问。然后比对策略资料，评估真实战场上的执行偏差（The Delta）。
 
+在正式落盘之前，检查 `docs/interviews/YYYY-MM-DD-[Company]-[Role]/review/` 目录下是否已经存在当前 persona slug 对应的 `<persona>-round-N.md` 文件。若不存在，则从 `round-1` 开始；若已存在，则取当前最大轮次并递增，写入下一轮。
+
 ## 2. 复盘落盘与导师级深度诊断 (Pedagogical Diagnosis)
 
 生成最终的复盘复习册。你不能只是像个记账员一样罗列错误。你必须扮演顶级大厂的技术导师，使用以下心法对逐字稿进行诊断：
 
-**保存要求：** `docs/interviews/YYYY-MM-DD-[Company]-[Role]/review.md`
+**保存要求：** `docs/interviews/YYYY-MM-DD-[Company]-[Role]/review/<persona>-round-N.md`
 
 必须严格采用下列段落格式呈现：
 
@@ -37,4 +41,4 @@
 
 ## 3. 彻底了结 (Terminal State)
 
-这份浓缩战书写入硬盘妥当之后，正式告知用户全套闭环流程顺利完结，系统休眠。在此处绝对不要再自作主张唤起其他多余技能。
+这份浓缩战书写入硬盘妥当之后，正式告知用户全套闭环流程顺利完结，并说明这次复盘已作为当前 persona 的第 `N` 轮复盘归档到 `review/` 目录下。系统休眠。在此处绝对不要再自作主张唤起其他多余技能。

@@ -16,6 +16,8 @@ Before writing the retrospective, you MUST explicitly ask the user TWO things (i
 
 Once provided, you MUST load the exact grading rubric for that specific persona from `.agents/agents/interview-[role].md` into your memory. This is critical because the definition of "success" changes based on who was asking the questions.
 
+Normalize that persona into a stable filename slug before writing any artifact. Prefer a lowercase, hyphenated slug derived from the persona label (for example, `Direct Manager` -> `direct-manager`). Reuse the same slug consistently for both filename matching and artifact creation so newly introduced personas do not require a skill update.
+
 Then, locate the active interview namespace (`docs/interviews/YYYY-MM-DD-[Company]-[Role]/`) and explicitly read the following trio of files:
 1. `resume-snapshot.md` (to see exactly what the user claimed to the interviewer)
 2. `strategy.md` (to see the initial plan)
@@ -23,10 +25,12 @@ Then, locate the active interview namespace (`docs/interviews/YYYY-MM-DD-[Compan
 
 Cross-reference the real transcript against the resume snapshot to evaluate if the resume attracted unwanted probing questions. Then check performance against the prepared materials to evaluate the execution Delta.
 
+Before writing the retrospective, inspect `docs/interviews/YYYY-MM-DD-[Company]-[Role]/review/` for existing files matching `<persona>-round-N.md` for the current persona slug. If none exist, start with `round-1`. Otherwise, increment the highest existing round number and use the next one.
+
 ## 2. Artifact Deposition & Pedagogical Diagnosis
 Write the final debrief document.
 
-**Save to:** `docs/interviews/YYYY-MM-DD-[Company]-[Role]/review.md`
+**Save to:** `docs/interviews/YYYY-MM-DD-[Company]-[Role]/review/<persona>-round-N.md`
 
 Instead of just listing what went wrong, you MUST act as a Senior Engineering Mentor. Provide a deep, pedagogical diagnosis of the transcript using the following exact sections:
 1. **Context & Execution**: Company, Role, Date, and a summary of how the real interview felt compared to the prep session.
@@ -36,4 +40,4 @@ Instead of just listing what went wrong, you MUST act as a Senior Engineering Me
 5. **Actionable Study Plan (微型刻意练习 & 简历降级)**: A checklist `[ ]` assigning 15-minute highly specific coding/learning tasks to fix the gaps (DO NOT give generic advice like "study React"). PLUS explicit mandatory directives to downgrade or delete the resume bullet points that proved to be liabilities.
 
 ## 3. Terminal State
-After saving the retrospective, inform the user that the interview prep workflow has successfully concluded. Do not invoke any further skills.
+After saving the retrospective, inform the user that the interview prep workflow has successfully concluded and that this review has been archived as the current persona's round `N` retrospective under `review/`. Do not invoke any further skills.
