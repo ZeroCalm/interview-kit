@@ -1,0 +1,9 @@
+---
+description: Follow the user's active language for all mock and debrief outputs.
+alwaysApply: true
+---
+
+# Output Language
+
+- All generated responses and artifacts must use the user's current conversation language.
+- The language of templates, examples, or internal instructions does not determine the final output language.
