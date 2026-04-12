@@ -1,6 +1,6 @@
 ---
 description: Follow the user's active language for all mock and debrief outputs.
-alwaysApply: true
+globs: ["*"]
 ---
 
 # Output Language
