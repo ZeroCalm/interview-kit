@@ -11,15 +11,18 @@
 1. 真实面试的**录音转写文本（Transcript）**或面经原声记录。
 2. **考官的身份 (Persona)**：这次对线的考官是同级开发 (Peer)、直属主管 (Manager)、架构师 (Architect) 还是 HR？
 
-一旦确认身份，你必须在后台静默加载该角色专属的考核标准体系（位于 `.agents/agents/interview-[role].md` 中）。这是为了防止“拿架构师的标尺去打分 HR 面试”的低级错误。
+一旦确认身份，你必须在后台静默加载该角色专属的考核标准体系（位于 `agents/interview-[role].md` 中）。这是为了防止“拿架构师的标尺去打分 HR 面试”的低级错误。
+
+此外，在正式写 retrospective 之前，你还必须加载 `rules/pedagogical-coach.mdc`。复盘不是流水账；它必须继承全局教学规则里的病灶归因与微型刻意练习要求。
 
 在写入任何复盘产物之前，你还必须先把该 Persona 规范化为稳定的文件名 slug。优先使用由 persona 标签派生出的**小写连字符形式**（例如 `Direct Manager` -> `direct-manager`）。无论是匹配已有复盘文件还是新建产物文件，都必须始终复用同一个 slug，这样后续即使新增角色，也不需要再改这条 skill。
 
-拿到日志并加载判别法则后，读取当前活跃的 `docs/interviews/YYYY-MM-DD-[Company]-[Role]/` 目录，并通读这三份核心文档：
+拿到日志并加载判别法则后，读取当前活跃的 `docs/interviews/YYYY-MM-DD-[Company]-[Role]/` 目录，并通读这组核心上下文：
 
 1. `resume-snapshot.md`（查看用户当时究竟在简历上如何标榜自己）
 2. `strategy.md`（原始防御战略）
 3. `prep-plan.md`（预演的题目列表）
+4. `rules/pedagogical-coach.mdc`（继承全局教学约束，确保诊断不是泛泛点评）
 
 将真实的面试表现与当初的简历快照进行对比碰撞，评估是否是失真的简历部分导向了灾难性的连环追问。然后比对策略资料，评估真实战场上的执行偏差（The Delta）。
 

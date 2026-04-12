@@ -14,14 +14,17 @@ Before writing the retrospective, you MUST explicitly ask the user TWO things (i
 1. The **Real Interview Transcript** (voice-to-text log or raw text notes).
 2. The **Interviewer Persona**: Was this interview with a Peer, a Direct Manager, an Architect, or HR?
 
-Once provided, you MUST load the exact grading rubric for that specific persona from `.agents/agents/interview-[role].md` into your memory. This is critical because the definition of "success" changes based on who was asking the questions.
+Once provided, you MUST load the exact grading rubric for that specific persona from `agents/interview-[role].md` into your memory. This is critical because the definition of "success" changes based on who was asking the questions.
+
+You MUST also load `rules/pedagogical-coach.mdc` before writing the retrospective. The retrospective is not just a scorecard; it must inherit the global pedagogical rules for root-cause diagnosis and micro-deliberate practice.
 
 Normalize that persona into a stable filename slug before writing any artifact. Prefer a lowercase, hyphenated slug derived from the persona label (for example, `Direct Manager` -> `direct-manager`). Reuse the same slug consistently for both filename matching and artifact creation so newly introduced personas do not require a skill update.
 
-Then, locate the active interview namespace (`docs/interviews/YYYY-MM-DD-[Company]-[Role]/`) and explicitly read the following trio of files:
+Then, locate the active interview namespace (`docs/interviews/YYYY-MM-DD-[Company]-[Role]/`) and explicitly read the following context bundle:
 1. `resume-snapshot.md` (to see exactly what the user claimed to the interviewer)
 2. `strategy.md` (to see the initial plan)
 3. `prep-plan.md` (to see what was actually mocked)
+4. `rules/pedagogical-coach.mdc` (to inherit the global coaching constraints for diagnosis quality)
 
 Cross-reference the real transcript against the resume snapshot to evaluate if the resume attracted unwanted probing questions. Then check performance against the prepared materials to evaluate the execution Delta.
 
